@@ -1,4 +1,4 @@
-import mypack.*;
+//import mypack.*;
 import mymath.*;
 
 interface Printable
@@ -22,7 +22,7 @@ class B implements Printable
 	}
 }
 
-abstract class Animal
+abstract class Animal implements Cloneable
 {
 	private static int idGenerator = 0;
 	
@@ -37,6 +37,11 @@ abstract class Animal
 	
 	abstract void sound();
 	abstract void move();
+	
+	public Object clone() throws CloneNotSupportedException
+	{
+		return super.clone();
+	}
 }
 
 class Dog extends Animal
@@ -45,13 +50,24 @@ class Dog extends Animal
 	
 	void sound()
 	{
-		System.out.println("...is barkling.");
+		System.out.println("...is barking.");
 	}
 	
 	void move()
 	{
 		System.out.println("...is running.");
 	}
+	
+	class Behaviour
+	{
+		int timing;
+		private Behaviour(int timing)
+		{
+			this.timing = timing;
+		}
+	}
+	
+	Behaviour beh = new Behaviour(10);
 }
 
 class Snail extends Animal
@@ -72,13 +88,20 @@ class Snail extends Animal
 public class Main
 {
 	public static void main(String[] args)
-	{
-		/*
-		Animal animal = new Dog("Jerry");
-		System.out.println(animal.name);
-		System.out.println(animal.id);
-		animal.sound();
-		animal.move();
+	{	
+		Animal animalOrig = new Dog("Jerry");
+		try
+		{
+			Animal animal = (Animal)animalOrig.clone();
+			System.out.println(animal.name);
+			System.out.println(animal.id);
+			animal.sound();
+			animal.move();
+			
+		} catch (CloneNotSupportedException e)
+		{
+			System.out.println(e);
+		}
 		
 		Printable pa = new A();
 		pa.print();
@@ -88,7 +111,7 @@ public class Main
 		
 		mypack.B obj = new mypack.B();
 		obj.print();
-		*/
+		
 		
 		double[] numbers = {4.0, 1.2, 5.6, 3.3, 7.1};
 		Array.print(numbers);
@@ -100,4 +123,4 @@ public class Main
 		Sort.selection(numbers2);
 		Array.print(numbers2);
 	}
-}
+}e
