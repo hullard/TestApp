@@ -1,4 +1,5 @@
 import mypack.*;
+import mymath.*;
 
 interface Printable
 {
@@ -72,6 +73,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{
+		/*
 		Animal animal = new Dog("Jerry");
 		System.out.println(animal.name);
 		System.out.println(animal.id);
@@ -86,5 +88,12 @@ public class Main
 		
 		mypack.B obj = new mypack.B();
 		obj.print();
+		*/
+		
+		double[] numbers = {4.0, 1.2, 5.6, 3.3, 7.1};
+		Array.print(numbers);
+		
+		Sort.bubble(numbers);
+		Array.print(numbers);
 	}
 }
