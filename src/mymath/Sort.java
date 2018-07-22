@@ -1,5 +1,7 @@
 package mymath;
 
+import java.util.*;
+
 public class Sort
 {
 	public static void bubble(double[] array)
@@ -12,11 +14,25 @@ public class Sort
 			{
 				if (array[j] > array[j + 1])
 				{
-					double tmp = array[j];
-					array[j] = array[j + 1];
-					array[j + 1] = tmp;
+					Array.swap(array, j, j + 1);
 				}
 			}
+		}
+	}
+	
+	public static void selection(double[] array)
+	{
+		int MAX_SIZE = array.length;
+		
+		for (int i = MAX_SIZE - 1; i > 0; i--)
+		{
+			int maxIndex = 0;
+			for (int j = 0; j < i; j++)
+			{
+				if (array[j + 1] > array[j])
+					maxIndex = j + 1;
+			}
+			Array.swap(array, i, maxIndex);
 		}
 	}
 }
