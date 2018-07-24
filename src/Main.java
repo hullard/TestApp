@@ -1,5 +1,6 @@
 //import mypack.*;
 import mymath.*;
+import java.util.*;
 
 interface Printable
 {
@@ -89,6 +90,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{	
+		/*
 		Animal animalOrig = new Dog("Jerry");
 		try
 		{
@@ -122,5 +124,17 @@ public class Main
 		Array.print(numbers2);
 		Sort.selection(numbers2);
 		Array.print(numbers2);
+		*/
+		
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("Javi");
+		list.add("John");
+		list.add("Peter");
+		
+		Iterator<String> itr = list.iterator();
+		while (itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
 	}
 }	
