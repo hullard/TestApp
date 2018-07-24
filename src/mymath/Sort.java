@@ -1,7 +1,5 @@
 package mymath;
 
-import java.util.*;
-
 public class Sort
 {
 	public static void bubble(double[] array)
