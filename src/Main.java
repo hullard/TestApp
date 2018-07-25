@@ -86,10 +86,24 @@ class Snail extends Animal
 	}
 }
 
+class Student
+{
+	int rollNumber;
+	String name;
+	int age;
+	
+	Student(int rollNumber, String name, int age)
+	{
+		this.rollNumber = rollNumber;
+		this.name = name;
+		this.age = age;
+	}
+}
+
 public class Main
 {
 	public static void main(String[] args)
-	{	
+	{
 		/*
 		Animal animalOrig = new Dog("Jerry");
 		try
@@ -104,6 +118,7 @@ public class Main
 		{
 			System.out.println(e);
 		}
+		
 		
 		Printable pa = new A();
 		pa.print();
@@ -125,16 +140,47 @@ public class Main
 		Sort.selection(numbers2);
 		Array.print(numbers2);
 		*/
-		
+		/*
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("Javi");
 		list.add("John");
 		list.add("Peter");
-		
+		/*
 		Iterator<String> itr = list.iterator();
 		while (itr.hasNext())
 		{
 			System.out.println(itr.next());
 		}
+		/*
+		
+		ArrayList<String> list2 = new ArrayList<String>();
+		list2.add("Peter");
+		list2.add("Jahnny");
+		
+		list.removeAll(list2);
+		
+		
+		ArrayList<Student> list = new ArrayList<Student>();
+		
+		list.add(new Student(1, "John", 18));
+		list.add(new Student(2, "Javy", 16));
+		list.add(new Student(3, "Jahnny", 17));
+		
+		ArrayList<Student> list2 = new ArrayList<Student>();
+		list2.add(new Student(4, "Peter", 22));
+		
+		list.addAll(list2);
+		list.removeAll(list2);
+		
+		for (Student student : list)
+		{
+			System.out.println("Roll number: " + student.rollNumber + " Name: " + student.name + " Age: " + student.age);
+		}
+		*/
+		
+		mymath.Stack<Student> mystack = new mymath.Stack<Student>();
+		mystack.push(new Student(1, "John", 18));
+		mystack.push(new Student(2, "Javy", 22));
+		System.out.println(mystack.pop().name);
 	}
 }	
