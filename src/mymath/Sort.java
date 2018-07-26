@@ -2,7 +2,7 @@ package mymath;
 
 public class Sort
 {
-	public static void bubble(double[] array)
+	public static void bubble(Double[] array)
 	{
 		int MAX_SIZE = array.length;
 		
@@ -18,7 +18,7 @@ public class Sort
 		}
 	}
 	
-	public static void selection(double[] array)
+	public static void selection(Double[] array)
 	{
 		int MAX_SIZE = array.length;
 		

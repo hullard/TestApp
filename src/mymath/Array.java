@@ -2,18 +2,18 @@ package mymath;
 
 public class Array
 {
-	public static void print(double[] array)
+	public static <E> void print(E[] array)
 	{		
-		for (double element : array)
+		for (E element : array)
 		{
 			System.out.print(element + "  ");
 		}
 		System.out.println();
 	}
 	
-	public static void swap(double[] array, int i, int j)
+	public static <E> void swap(E[] array, int i, int j)
 	{
-		double temp = array[i];
+		E temp = array[i];
 		array[i] = array[j];
 		array[j] = temp;
 	}

@@ -178,9 +178,17 @@ public class Main
 		}
 		*/
 		
+		Integer[] intArray = { 10, 20, 30, 40, 50 };  
+		Array.print(intArray);
+		
+		Character[] charArray = {'A', 'N', 'T'};
+		Array.print(charArray);
+		
+		/*
 		mymath.Stack<Student> mystack = new mymath.Stack<Student>();
 		mystack.push(new Student(1, "John", 18));
 		mystack.push(new Student(2, "Javy", 22));
 		System.out.println(mystack.pop().name);
+		*/
 	}
 }	
