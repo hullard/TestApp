@@ -205,7 +205,7 @@ public class Main
 		
 		/*
 		
-		mymath.Stack<Student> mystack = new mymath.Stack<Student>();
+		NodeStack<Student> mystack = new NodeStack<Student>();
 		mystack.push(new Student(1, "John", 18));
 		mystack.push(new Student(2, "Javy", 22));
 		
@@ -213,11 +213,18 @@ public class Main
 		System.out.println(mystack.pop().name);
 		*/
 		
+		/*
 		ArrayList<Animal> list = new ArrayList<Animal>();
 		list.add(new Snail("snail my name"));
 		list.add(new Dog("dog my name"));
 		
 		drawAnimals(list);
+		*/
 		
+		NodeStack<Student> stack = new NodeStack<Student>();
+		stack.push(new Student(1, "John", 11));
+		NodeStack<Student> stackCloned = stack;
+		
+		System.out.println(stackCloned.pop().name);
 	}
 }	

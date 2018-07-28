@@ -12,7 +12,7 @@ public class Sort
 			{
 				if (array[j] > array[j + 1])
 				{
-					Array.swap(array, j, j + 1);
+					ArrayOperations.swap(array, j, j + 1);
 				}
 			}
 		}
@@ -30,7 +30,7 @@ public class Sort
 				if (array[j + 1] > array[j])
 					maxIndex = j + 1;
 			}
-			Array.swap(array, i, maxIndex);
+			ArrayOperations.swap(array, i, maxIndex);
 		}
 	}
 }
