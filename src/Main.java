@@ -221,10 +221,16 @@ public class Main
 		drawAnimals(list);
 		*/
 		
+		/*
 		NodeStack<Student> stack = new NodeStack<Student>();
 		stack.push(new Student(1, "John", 11));
-		NodeStack<Student> stackCloned = stack;
 		
-		System.out.println(stackCloned.pop().name);
+		NodeStack<Student> stackCloned = stack;
+		stackCloned.pop();
+		*/
+		
+		mymath.LinkedList<Student> list = new mymath.LinkedList<Student>();
+		list.append(new Student(1, "John", 11));
+		System.out.println(list.getItem(0).name);
 	}
 }	
