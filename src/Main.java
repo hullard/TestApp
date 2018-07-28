@@ -38,6 +38,7 @@ abstract class Animal implements Cloneable
 	
 	abstract void sound();
 	abstract void move();
+	abstract void draw();
 	
 	public Object clone() throws CloneNotSupportedException
 	{
@@ -57,6 +58,11 @@ class Dog extends Animal
 	void move()
 	{
 		System.out.println("...is running.");
+	}
+	
+	void draw()
+	{
+		System.out.println("Draw Dog.");
 	}
 	
 	class Behaviour
@@ -84,6 +90,11 @@ class Snail extends Animal
 	{
 		System.out.println("...is sliding.");
 	}
+	
+	void draw()
+	{
+		System.out.println("Draw Snail.");
+	}
 }
 
 class Student
@@ -102,6 +113,12 @@ class Student
 
 public class Main
 {
+	public static void drawAnimals(ArrayList<? extends Animal> list)
+	{
+		for (Animal animal : list)
+			animal.draw();
+	}
+	
 	public static void main(String[] args)
 	{
 		/*
@@ -112,9 +129,9 @@ public class Main
 			System.out.println(animal.name);
 			System.out.println(animal.id);
 			animal.sound();
+		} catch (CloneNotSupportedException e)
 			animal.move();
 			
-		} catch (CloneNotSupportedException e)
 		{
 			System.out.println(e);
 		}
@@ -178,17 +195,29 @@ public class Main
 		}
 		*/
 		
+		/*
 		Integer[] intArray = { 10, 20, 30, 40, 50 };  
 		Array.print(intArray);
 		
 		Character[] charArray = {'A', 'N', 'T'};
 		Array.print(charArray);
+		*/
 		
 		/*
+		
 		mymath.Stack<Student> mystack = new mymath.Stack<Student>();
 		mystack.push(new Student(1, "John", 18));
 		mystack.push(new Student(2, "Javy", 22));
+		
+		System.out.println(mystack.pop().name);
 		System.out.println(mystack.pop().name);
 		*/
+		
+		ArrayList<Animal> list = new ArrayList<Animal>();
+		list.add(new Snail("snail my name"));
+		list.add(new Dog("dog my name"));
+		
+		drawAnimals(list);
+		
 	}
 }	
