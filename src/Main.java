@@ -109,11 +109,17 @@ class Student
 		this.name = name;
 		this.age = age;
 	}
+	
+	@Override
+	public String toString()
+	{	
+		return "[roll_number=" + this.rollNumber + ", name=" + this.name + ", age=" + this.age + "]"; 
+	}
 }
 
 public class Main
 {
-	public static void drawAnimals(ArrayList<? extends Animal> list)
+	public static void drawAnimals(java.util.ArrayList<? extends Animal> list)
 	{
 		for (Animal animal : list)
 			animal.draw();
@@ -229,8 +235,14 @@ public class Main
 		stackCloned.pop();
 		*/
 		
+		/*
 		mymath.LinkedList<Student> list = new mymath.LinkedList<Student>();
 		list.append(new Student(1, "John", 11));
 		System.out.println(list.getItem(0).name);
+		*/
+		
+		mymath.ArrayList<Student> list = new mymath.ArrayList<Student>();
+		list.append(new Student(1, "John", 11));
+		System.out.println(list.getItem(0).toString());
 	}
 }	

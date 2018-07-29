@@ -2,8 +2,8 @@ package mymath;
 
 class Node<T>
 {
-	T item;
-	Node<T> other;
+	private T item;
+	private Node<T> other;
 	
 	Node(T item, Node<T> other) 
 	{
@@ -11,20 +11,35 @@ class Node<T>
 		this.other = other;
 	}
 	
-	Node(T item) { this(item, null); }
+	Node(T item) 
+	{ 
+		this(item, null); 
+	}
 	
-	T getItem() { return this.item; }
+	T getItem() 
+	{ 
+		return this.item; 
+	}
 	
-	Node<T> getOther() { return this.other; }
+	Node<T> getOther() 
+	{ 
+		return this.other; 
+	}
 	
-	void setItem(T item) { this.item = item; }
+	void setItem(T item) 
+	{
+		this.item = item; 
+	}
 	
-	void setOther(Node<T> other) { this.other = other; }
+	void setOther(Node<T> other) 
+	{ 
+		this.other = other; 
+	}
 }
 
 public class NodeStack<T> implements Cloneable
 {	
-	Node<T> top;
+	private Node<T> top;
 	
 	public NodeStack() { }
 

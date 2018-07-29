@@ -2,7 +2,7 @@ package mymath;
 
 public class LinkedList<T> implements Cloneable
 {
-	Node<T> head;
+	private Node<T> head;
 	
 	public LinkedList() { }
 	
@@ -48,5 +48,4 @@ public class LinkedList<T> implements Cloneable
 	{
 		return super.clone();
 	}
-	
 }
