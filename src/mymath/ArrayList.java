@@ -4,31 +4,32 @@ import java.util.Arrays;
 
 public class ArrayList<E> implements Cloneable
 {
-	private static final int INIT_SIZE = 16;
+	private static final int INIT_CAPACITY = 8;
+	private int capacity;
+	private int size = 0;
 	private E[] array;
-	private int listLength = 0;
-	private int arrayLength = INIT_SIZE;
 	
 	public ArrayList(int capacity) 	
 	{
 		@SuppressWarnings("unchecked")
 		final E[] array = (E[]) new Object[capacity];
+		this.capacity = capacity; 
 		this.array = array;
 	}
 	
 	public ArrayList() 
 	{
-		this(INIT_SIZE);
+		this(INIT_CAPACITY);
 	}
 	
 	public void append(E item)
 	{
-		if (this.listLength == this.arrayLength)
+		if (this.size == this.capacity)
 		{
-			this.arrayLength *= 2;
-			this.array = Arrays.copyOf(this.array, this.arrayLength);
+			this.capacity *= 2;
+			this.array = Arrays.copyOf(this.array, this.capacity);
 		}
-		this.array[this.listLength++] = item;
+		this.array[this.size++] = item;
 	}
 	
 	public E getItem(int idx)
@@ -39,6 +40,11 @@ public class ArrayList<E> implements Cloneable
 	public void setItem(E item, int idx) 
 	{
 		this.array[idx] = item;
+	}
+	
+	public int size()
+	{
+		return this.size;
 	}
 
 	public Object clone() throws CloneNotSupportedException

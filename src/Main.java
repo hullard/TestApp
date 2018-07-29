@@ -1,5 +1,6 @@
 //import mypack.*;
 import mymath.*;
+
 import java.util.*;
 
 interface Printable
@@ -151,18 +152,20 @@ public class Main
 		
 		mypack.B obj = new mypack.B();
 		obj.print();
-		
-		
-		double[] numbers = {4.0, 1.2, 5.6, 3.3, 7.1};
-		Array.print(numbers);
-		Sort.bubble(numbers);
-		Array.print(numbers);
-		
-		double[] numbers2 = {1.0, 0.2, 2.6, 6.3, 1.1};
-		Array.print(numbers2);
-		Sort.selection(numbers2);
-		Array.print(numbers2);
 		*/
+
+		/*
+		Double[] numbers = {4.0, 1.2, 5.6, 3.3, 7.1};
+		ArrayOperations.print(numbers);
+		Sort.bubble(numbers);;
+		ArrayOperations.print(numbers);
+		
+		Double[] numbers2 = {1.0, 0.2, 2.6, 6.3, 1.1};
+		ArrayOperations.print(numbers2);
+		Sort.selection(numbers2);
+		ArrayOperations.print(numbers2);
+		*/
+		
 		/*
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("Javi");
@@ -241,8 +244,17 @@ public class Main
 		System.out.println(list.getItem(0).name);
 		*/
 		
+	
 		mymath.ArrayList<Student> list = new mymath.ArrayList<Student>();
 		list.append(new Student(1, "John", 11));
-		System.out.println(list.getItem(0).toString());
+		list.append(new Student(2, "Javy", 22));
+		list.append(new Student(3, "Javgy", 31));
+		
+		for (int itr = 0; itr < list.size(); itr++)
+			System.out.println(list.getItem(itr).toString());
+		
+	
+		
+		
 	}
 }	
