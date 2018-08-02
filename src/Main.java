@@ -244,7 +244,7 @@ public class Main
 		System.out.println(list.getItem(0).name);
 		*/
 		
-	
+		/*
 		mymath.ArrayList<Student> list = new mymath.ArrayList<Student>();
 		list.append(new Student(1, "John", 11));
 		list.append(new Student(2, "Javy", 22));
@@ -252,9 +252,9 @@ public class Main
 		
 		for (int itr = 0; itr < list.size(); itr++)
 			System.out.println(list.getItem(itr).toString());
+		*/
 		
-	
-		
+		FileProcess.removeDuplicatedWords("./src.java");
 		
 	}
 }	
